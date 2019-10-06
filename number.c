@@ -53,7 +53,7 @@ void subsetSum(int set[], int subSet[], int n, int subSize, int total, int count
     else if(total > sum) // skip case
       return;
     else {
-      printf("11\n");    
+      //printf("11\n");    
       for(int i = count; i < n; i++ ) {
         subSet[subSize] = set[i];
         subAdd[subSize] = i;
@@ -191,7 +191,7 @@ int main(int argc, char *argv[]) {
 //    printf("%d\n",label_row[i]);
 //  for(int i = 0; i < row; i++)
 //    printf("%d\n",label_col[i]);
-  fclose(fpd);
+fclose(fpd);
   //행렬 테스트
 for(int i = 0; i < 9; i++){
   	for(int j = 0; j < 9; j++)
@@ -206,9 +206,9 @@ for(int i = 0; i < 9; i++){
         fprintf(fp,"(declare-const B%d_%d Int)\n", i, j) ;
   for (int i = 1; i <= row; i++)
       for(int j = 1; j <= col; j++)
-  		  fprintf(fp,"(assert(and (<= B%d_%d 1) (<= 0 B%d_%d)))\n", i, j, i, j);
+  	fprintf(fp,"(assert(and (<= B%d_%d 1) (<= 0 B%d_%d)))\n", i, j, i, j);
   // col case check
-  for (int i = 8; i < row; i++)
+ /* for (int i = 0; i < row; i++)
   {
     for (int j = 0; j < row; j++)
     {
@@ -221,7 +221,7 @@ for(int i = 0; i < 9; i++){
     fprintf(fp,"))\n");
   }
   free(temp_row);
-  free(label_row);
+  free(label_row); */
   // row case
   for (int i = 0; i < col; i++)
   {
