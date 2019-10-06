@@ -3,10 +3,10 @@
 #include <string.h>
 
 
-
+FILE * fp;
 int check;
 
-void printSubset(int subSet[], int size, int subAdd[], int index, int check, FILE *fp) {
+void printSubset(int subSet[], int size, int subAdd[], int index, int check) {
   if(check == 1)
   {
     if(size == 1)
@@ -45,9 +45,9 @@ void printSubset(int subSet[], int size, int subAdd[], int index, int check, FIL
   }
 }
 
-void subsetSum(int set[], int subSet[], int n, int subSize, int total, int count ,int sum, int subAdd[], int index, int check, FILE *fp) {
+void subsetSum(int set[], int subSet[], int n, int subSize, int total, int count ,int sum, int subAdd[], int index, int check) {
     if(total == sum) { // corrext case
-       printSubset(subSet, subSize, subAdd, index, check, fp);     // print the subset
+       printSubset(subSet, subSize, subAdd, index, check);     // print the subset
        return;
     }
     else if(total > sum) // skip case
@@ -56,18 +56,16 @@ void subsetSum(int set[], int subSet[], int n, int subSize, int total, int count
       for(int i = count; i < n; i++ ) {
         subSet[subSize] = set[i];
         subAdd[subSize] = i;
-        subsetSum(set, subSet, n, subSize+1, total+set[i], i+1, sum, subAdd, index, check, fp);     // search next subset
-        printf("11\n");
-      }
+        subsetSum(set, subSet, n, subSize+1, total+set[i], i+1, sum, subAdd, index, check);     // search next subset
+       }
     }
 }
 
-void findSubset(int set[], int size, int sum, int index, int check, FILE *fp) {
+void findSubset(int set[], int size, int sum, int index, int check) {
     int *subSet = (int*)malloc(size * sizeof(int));     //create subset array to pass parameter of subsetSum
     int *subAdd = (int*)malloc(size * sizeof(int));     //create subaddress array to pass parameter of subsetSum
-    subsetSum(set, subSet, size, 0, 0, 0, sum, subAdd, index, check, fp);
+    subsetSum(set, subSet, size, 0, 0, 0, sum, subAdd, index, check);
     free(subSet);
-    free(subAdd);
 }
 
 int main(int argc, char *argv[]) {
@@ -87,8 +85,7 @@ int main(int argc, char *argv[]) {
   int check_num = 0;
   int already = 0;
 
-
-  FILE * fp = fopen("formula","w");
+  fp = fopen("formula","w");
 
   FILE * fpc = NULL;
   if(argc>1)
@@ -218,7 +215,7 @@ int main(int argc, char *argv[]) {
     }
     //printf("\n");
     fprintf(fp,"(assert(or ");
-    findSubset(temp_row, row, label_row[i], i+1, 1, fp);
+    findSubset(temp_row, row, label_row[i], i+1, 1);
     fprintf(fp,"))\n");
   }
   free(temp_row);
@@ -233,7 +230,7 @@ int main(int argc, char *argv[]) {
     }
     //printf("\n");
     fprintf(fp,"(assert(or ");
-    findSubset(temp_col, col, label_col[i], i+1, 0, fp);
+    findSubset(temp_col, col, label_col[i], i+1, 0);
     fprintf(fp,"))\n");
   }
   free(temp_col);
