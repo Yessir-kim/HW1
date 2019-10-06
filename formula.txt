@@ -1,0 +1,165 @@
+sat
+(model 
+  (define-fun B5_4 () Int
+    1)
+  (define-fun B7_1 () Int
+    0)
+  (define-fun B5_5 () Int
+    1)
+  (define-fun B8_6 () Int
+    1)
+  (define-fun B3_8 () Int
+    1)
+  (define-fun B2_2 () Int
+    1)
+  (define-fun B8_9 () Int
+    0)
+  (define-fun B4_2 () Int
+    1)
+  (define-fun B6_6 () Int
+    0)
+  (define-fun B3_3 () Int
+    1)
+  (define-fun B9_9 () Int
+    0)
+  (define-fun B1_6 () Int
+    0)
+  (define-fun B8_7 () Int
+    0)
+  (define-fun B8_5 () Int
+    0)
+  (define-fun B3_7 () Int
+    0)
+  (define-fun B6_1 () Int
+    0)
+  (define-fun B3_6 () Int
+    0)
+  (define-fun B1_9 () Int
+    0)
+  (define-fun B5_2 () Int
+    0)
+  (define-fun B3_1 () Int
+    1)
+  (define-fun B6_8 () Int
+    1)
+  (define-fun B9_6 () Int
+    1)
+  (define-fun B4_7 () Int
+    1)
+  (define-fun B2_5 () Int
+    1)
+  (define-fun B5_3 () Int
+    0)
+  (define-fun B5_6 () Int
+    0)
+  (define-fun B3_5 () Int
+    1)
+  (define-fun B9_8 () Int
+    1)
+  (define-fun B1_3 () Int
+    0)
+  (define-fun B2_4 () Int
+    0)
+  (define-fun B3_9 () Int
+    1)
+  (define-fun B7_4 () Int
+    0)
+  (define-fun B6_4 () Int
+    1)
+  (define-fun B7_9 () Int
+    1)
+  (define-fun B2_7 () Int
+    0)
+  (define-fun B3_4 () Int
+    0)
+  (define-fun B5_7 () Int
+    0)
+  (define-fun B6_5 () Int
+    0)
+  (define-fun B8_4 () Int
+    1)
+  (define-fun B5_8 () Int
+    1)
+  (define-fun B9_1 () Int
+    0)
+  (define-fun B9_7 () Int
+    0)
+  (define-fun B6_7 () Int
+    1)
+  (define-fun B4_1 () Int
+    1)
+  (define-fun B1_4 () Int
+    1)
+  (define-fun B6_2 () Int
+    1)
+  (define-fun B6_3 () Int
+    1)
+  (define-fun B5_1 () Int
+    0)
+  (define-fun B9_3 () Int
+    0)
+  (define-fun B1_5 () Int
+    0)
+  (define-fun B7_5 () Int
+    0)
+  (define-fun B4_6 () Int
+    1)
+  (define-fun B7_2 () Int
+    0)
+  (define-fun B2_8 () Int
+    0)
+  (define-fun B7_3 () Int
+    1)
+  (define-fun B2_3 () Int
+    1)
+  (define-fun B8_3 () Int
+    1)
+  (define-fun B2_6 () Int
+    0)
+  (define-fun B1_7 () Int
+    1)
+  (define-fun B4_8 () Int
+    0)
+  (define-fun B9_2 () Int
+    0)
+  (define-fun B1_1 () Int
+    1)
+  (define-fun B3_2 () Int
+    1)
+  (define-fun B5_9 () Int
+    1)
+  (define-fun B6_9 () Int
+    0)
+  (define-fun B4_3 () Int
+    1)
+  (define-fun B4_5 () Int
+    1)
+  (define-fun B1_2 () Int
+    1)
+  (define-fun B8_2 () Int
+    1)
+  (define-fun B7_6 () Int
+    0)
+  (define-fun B2_9 () Int
+    0)
+  (define-fun B8_8 () Int
+    1)
+  (define-fun B4_9 () Int
+    1)
+  (define-fun B2_1 () Int
+    0)
+  (define-fun B4_4 () Int
+    1)
+  (define-fun B9_5 () Int
+    1)
+  (define-fun B1_8 () Int
+    0)
+  (define-fun B9_4 () Int
+    0)
+  (define-fun B7_7 () Int
+    1)
+  (define-fun B8_1 () Int
+    1)
+  (define-fun B7_8 () Int
+    1)
+)
