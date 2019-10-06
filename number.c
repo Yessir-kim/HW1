@@ -160,7 +160,7 @@ int main(int argc, char *argv[]) {
       else if(c == '\n') {count++; continue;}
       else
       {
-        if(c != '\0')
+        if(c != '\n')
         {
           label_row[check_num]*=10;
 	  //printf("%d\n",label_row[check_num]);
@@ -174,7 +174,7 @@ int main(int argc, char *argv[]) {
       else if(c == '\n') {k++; l = 0; already++; col_count = 0; continue;}
       else
       {
-        if(c != '\0')
+        if(c != '\n')
         {
           if(col_count >= col)
           {
