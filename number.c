@@ -213,7 +213,7 @@ for(int i = 0; i < 9; i++){
     for (int j = 0; j < row; j++)
     {
       temp_row[j] = a[j][i];
-      //printf("%d ",temp_row[j]);
+      printf("%d ",label_row[i]);
     }
     //printf("\n");
     fprintf(fp,"(assert(or ");
@@ -228,7 +228,7 @@ for(int i = 0; i < 9; i++){
     for (int j = 0; j < col; j++)
     {
       temp_col[j] = a[i][j];
-      //printf("%d ",temp_row[j]);
+      printf("%d ",label_col[i]);
     }
     //printf("\n");
     fprintf(fp,"(assert(or ");
