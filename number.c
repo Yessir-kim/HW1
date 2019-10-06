@@ -244,7 +244,7 @@ int main(int argc, char *argv[]) {
     free(a[i]);
   free(a); // free memory for row pointers
 
-  FILE * fin = popen("z3 formula","r");
+  /*FILE * fin = popen("z3 formula","r");
 
   char board[row + 1][col + 1];
 
@@ -283,5 +283,5 @@ int main(int argc, char *argv[]) {
 		}
 		printf("\n") ;
 	}
-  pclose(fin);
+  pclose(fin); */
 }
