@@ -164,7 +164,7 @@ int main(int argc, char *argv[]) {
         {
           label_row[check_num]*=10;
           label_row[check_num]+=atoi(&c);
-          //printf("%d\n",label_row[l]);
+          printf("%d\n",label_row[l]);
         }  
       }
     }
