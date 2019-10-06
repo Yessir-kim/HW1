@@ -132,40 +132,48 @@ int main(int argc, char *argv[]) {
   fclose(fpc);
 
   count = 0;
-  label_row = (int*)malloc(label_num * sizeof (int));
+  label_row = (int*)malloc(col * sizeof (int));
   label_col = (int*)malloc(row * sizeof (int));
 
   a = (int**)malloc(row * sizeof (*a));
   for (int j = 0; j < row; j++)
 	 a[j] = (int*)malloc(col * sizeof(**a));
 
-  for(int i = 0; i < row; i++)
-   	for(int j = 0; j < col; j++)
-   		 a[i][j] = 0;
-  for(int i = 0; i < label_num; i++)
-    label_row[i] = 0;
-  for(int j = 0; j < row; j++)
-    label_col[j] = 0;
-
   FILE * fpd = fopen(argv[1],"r");
 
-  while(1)
+  for(int i = 0; i < col; i++)
+  {
+    fscanf(fpd,"%d",&label_row[i]);
+    //printf("%d\n",label_row[i]);
+  }
+  for(int i = 0; i < row; i++)
+    for(int j = 0; j < col + 1; j++)
+    {
+      if(j == 9)
+      {
+        fscanf(fpd,"%d",&label_col[i]);
+        //printf("%d\n",label_col[i]);
+      }
+      else
+        fscanf(fpd,"%d",&a[i][j]);
+    }
+/*  while(1)
   {
     c = fgetc(fpd);
     if(feof(fpd)) break;
-    printf("%c\n",c);
+  //  printf("%c\n",c);
     if(count < col)
     {
       if(c == ' ') {check_num++; count++; continue;}
       else if(c == '\n') {count++; continue;}
       else
       {
-        if(c != '\n')
+        if(c != '\0')
         {
           label_row[check_num]*=10;
-	  //printf("%d\n",label_row[check_num]);
           label_row[check_num]+=atoi(&c);
-        }  
+          //printf("%d\n",label_row[l]);
+        }
       }
     }
     else
@@ -174,7 +182,7 @@ int main(int argc, char *argv[]) {
       else if(c == '\n') {k++; l = 0; already++; col_count = 0; continue;}
       else
       {
-        if(c != '\n')
+        if(c != '\0')
         {
           if(col_count >= col)
           {
@@ -190,18 +198,19 @@ int main(int argc, char *argv[]) {
         }
       }
     }
-  }
+  }*/
 //  for(int i = 0; i < label_num; i++)
- //   printf("%d\n",label_row[i]);
- // for(int i = 0; i < row; i++)
-  //  printf("%d\n",label_col[i]);
+//    printf("%d\n",label_row[i]);
+//  for(int i = 0; i < row; i++)
+//    printf("%d\n",label_col[i]);
   fclose(fpd);
   //행렬 테스트
-/*for(int i = 0; i < 9; i++){
+  for(int i = 0; i < 9; i++){
   	for(int j = 0; j < 9; j++)
   		printf("%d ",a[i][j]);
     printf("\n");
-  }*/
+  }
+
   temp_row = (int*)malloc(row * sizeof (int));
   temp_col = (int*)malloc(col * sizeof (int));
   // assert statement declare
