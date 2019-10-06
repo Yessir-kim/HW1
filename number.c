@@ -46,14 +46,13 @@ void printSubset(int subSet[], int size, int subAdd[], int index, int check) {
 }
 
 void subsetSum(int set[], int subSet[], int n, int subSize, int total, int count ,int sum, int subAdd[], int index, int check) {
-    if(total == sum) { // corrext case
+    if(total == sum) { // correct case
        printSubset(subSet, subSize, subAdd, index, check);     // print the subset
        return;
     }
     else if(total > sum) // skip case
       return;
     else {
-      //printf("11\n");    
       for(int i = count; i < n; i++ ) {
         subSet[subSize] = set[i];
         subAdd[subSize] = i;
@@ -67,7 +66,6 @@ void findSubset(int set[], int size, int sum, int index, int check) {
     int *subAdd = (int*)malloc(size * sizeof(int));     //create subaddress array to pass parameter of subsetSum
     subsetSum(set, subSet, size, 0, 0, 0, sum, subAdd, index, check);
     free(subSet);
-    free(subAdd);
 }
 
 int main(int argc, char *argv[]) {
@@ -162,9 +160,12 @@ int main(int argc, char *argv[]) {
       else if(c == '\n') {count++; continue;}
       else
       {
-        label_row[check_num]*=10;
-        label_row[check_num]+=atoi(&c);
-        //printf("%d\n",label_row[l]);
+        if(c != '\0')
+        {
+          label_row[check_num]*=10;
+          label_row[check_num]+=atoi(&c);
+          //printf("%d\n",label_row[l]);
+        }  
       }
     }
     else
@@ -173,31 +174,34 @@ int main(int argc, char *argv[]) {
       else if(c == '\n') {k++; l = 0; already++; col_count = 0; continue;}
       else
       {
-        if(col_count >= col)
+        if(c != '\0')
         {
-          label_col[already]*=10;
-          label_col[already]+=atoi(&c);
-        }
-        else
-        {
-          a[k][l]*=10;
-          a[k][l]+=atoi(&c);
-        //  printf("%d\n",a[k][l]);
+          if(col_count >= col)
+          {
+            label_col[already]*=10;
+            label_col[already]+=atoi(&c);
+          }
+          else
+          {
+            a[k][l]*=10;
+            a[k][l]+=atoi(&c);
+          //  printf("%d\n",a[k][l]);
+          }
         }
       }
     }
   }
-//  for(int i = 0; i < label_num; i++)
-//    printf("%d\n",label_row[i]);
-//  for(int i = 0; i < row; i++)
-//    printf("%d\n",label_col[i]);
-fclose(fpd);
+  for(int i = 0; i < label_num; i++)
+    printf("%d\n",label_row[i]);
+  for(int i = 0; i < row; i++)
+    printf("%d\n",label_col[i]);
+  fclose(fpd);
   //행렬 테스트
-for(int i = 0; i < 9; i++){
+/*for(int i = 0; i < 9; i++){
   	for(int j = 0; j < 9; j++)
   		printf("%d ",a[i][j]);
     printf("\n");
-  }
+  }*/
   temp_row = (int*)malloc(row * sizeof (int));
   temp_col = (int*)malloc(col * sizeof (int));
   // assert statement declare
@@ -206,12 +210,13 @@ for(int i = 0; i < 9; i++){
         fprintf(fp,"(declare-const B%d_%d Int)\n", i, j) ;
   for (int i = 1; i <= row; i++)
       for(int j = 1; j <= col; j++)
-  	fprintf(fp,"(assert(and (<= B%d_%d 1) (<= 0 B%d_%d)))\n", i, j, i, j);
+  		  fprintf(fp,"(assert(and (<= B%d_%d 1) (<= 0 B%d_%d)))\n", i, j, i, j);
   // col case check
   for (int i = 0; i < row; i++)
   {
     for (int j = 0; j < row; j++)
     {
+      //printf("%d\n",row);
       temp_row[j] = a[j][i];
       printf("%d ",label_row[i]);
     }
@@ -221,7 +226,7 @@ for(int i = 0; i < 9; i++){
     fprintf(fp,"))\n");
   }
   free(temp_row);
-  free(label_row); 
+  free(label_row);
   // row case
   for (int i = 0; i < col; i++)
   {
@@ -284,5 +289,5 @@ for(int i = 0; i < 9; i++){
 		}
 		printf("\n") ;
 	}
-  pclose(fin); */
+  pclose(fin);*/
 }
