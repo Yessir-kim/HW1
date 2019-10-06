@@ -67,6 +67,7 @@ void findSubset(int set[], int size, int sum, int index, int check) {
     int *subAdd = (int*)malloc(size * sizeof(int));     //create subaddress array to pass parameter of subsetSum
     subsetSum(set, subSet, size, 0, 0, 0, sum, subAdd, index, check);
     free(subSet);
+    free(subAdd);
 }
 
 int main(int argc, char *argv[]) {
