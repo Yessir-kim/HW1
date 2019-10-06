@@ -191,11 +191,11 @@ int main(int argc, char *argv[]) {
 //    printf("%d\n",label_col[i]);
   fclose(fpd);
   //행렬 테스트
-/*for(int i = 0; i < 9; i++){
+for(int i = 0; i < 9; i++){
   	for(int j = 0; j < 9; j++)
   		printf("%d ",a[i][j]);
     printf("\n");
-  }*/
+  }
   temp_row = (int*)malloc(row * sizeof (int));
   temp_col = (int*)malloc(col * sizeof (int));
   // assert statement declare
