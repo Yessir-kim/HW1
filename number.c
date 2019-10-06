@@ -208,7 +208,7 @@ for(int i = 0; i < 9; i++){
       for(int j = 1; j <= col; j++)
   	fprintf(fp,"(assert(and (<= B%d_%d 1) (<= 0 B%d_%d)))\n", i, j, i, j);
   // col case check
- /* for (int i = 0; i < row; i++)
+  for (int i = 0; i < row; i++)
   {
     for (int j = 0; j < row; j++)
     {
@@ -221,7 +221,7 @@ for(int i = 0; i < 9; i++){
     fprintf(fp,"))\n");
   }
   free(temp_row);
-  free(label_row); */
+  free(label_row); 
   // row case
   for (int i = 0; i < col; i++)
   {
