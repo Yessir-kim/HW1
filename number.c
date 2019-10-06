@@ -7,7 +7,6 @@ FILE * fp;
 int check;
 
 void printSubset(int subSet[], int size, int subAdd[], int index, int check) {
-  printf("11\n");
   if(check == 1)
   {
     if(size == 1)
@@ -47,6 +46,7 @@ void printSubset(int subSet[], int size, int subAdd[], int index, int check) {
 }
 
 void subsetSum(int set[], int subSet[], int n, int subSize, int total, int count ,int sum, int subAdd[], int index, int check) {
+    printf("11\n");
     if(total == sum) { // corrext case
        printSubset(subSet, subSize, subAdd, index, check);     // print the subset
        return;
