@@ -153,7 +153,7 @@ int main(int argc, char *argv[]) {
   {
     c = fgetc(fpd);
     if(feof(fpd)) break;
-  //  printf("%c\n",c);
+    printf("%c\n",c);
     if(count < col)
     {
       if(c == ' ') {check_num++; count++; continue;}
@@ -163,7 +163,7 @@ int main(int argc, char *argv[]) {
         if(c != '\0')
         {
           label_row[check_num]*=10;
-	  printf("%d\n",label_row[check_num]);
+	  //printf("%d\n",label_row[check_num]);
           label_row[check_num]+=atoi(&c);
         }  
       }
@@ -191,10 +191,10 @@ int main(int argc, char *argv[]) {
       }
     }
   }
-  for(int i = 0; i < label_num; i++)
-    printf("%d\n",label_row[i]);
-  for(int i = 0; i < row; i++)
-    printf("%d\n",label_col[i]);
+//  for(int i = 0; i < label_num; i++)
+ //   printf("%d\n",label_row[i]);
+ // for(int i = 0; i < row; i++)
+  //  printf("%d\n",label_col[i]);
   fclose(fpd);
   //행렬 테스트
 /*for(int i = 0; i < 9; i++){
