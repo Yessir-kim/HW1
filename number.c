@@ -7,6 +7,7 @@ FILE * fp;
 int check;
 
 void printSubset(int subSet[], int size, int subAdd[], int index, int check) {
+  printf("11\n");
   if(check == 1)
   {
     if(size == 1)
