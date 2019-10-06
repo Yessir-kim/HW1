@@ -206,7 +206,7 @@ int main(int argc, char *argv[]) {
       for(int j = 1; j <= col; j++)
   		  fprintf(fp,"(assert(and (<= B%d_%d 1) (<= 0 B%d_%d)))\n", i, j, i, j);
   // col case check
-  for (int i = 0; i < row; i++)
+  for (int i = 8; i < row; i++)
   {
     for (int j = 0; j < row; j++)
     {
