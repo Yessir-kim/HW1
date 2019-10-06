@@ -62,7 +62,7 @@ void subsetSum(int set[], int subSet[], int n, int subSize, int total, int count
 }
 
 void findSubset(int set[], int size, int sum, int index, int check, FILE *fp) {
-    printf("11");
+    printf("11\n");
     int *subSet = (int*)malloc(size * sizeof(int));     //create subset array to pass parameter of subsetSum
     int *subAdd = (int*)malloc(size * sizeof(int));     //create subaddress array to pass parameter of subsetSum
     subsetSum(set, subSet, size, 0, 0, 0, sum, subAdd, index, check, fp);
