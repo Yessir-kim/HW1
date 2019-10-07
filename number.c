@@ -181,7 +181,7 @@ int main(int argc, char *argv[]) {
     {
       //printf("%d\n",row);
       temp_row[j] = a[j][i];
-      printf("%d ",label_row[i]);
+      //printf("%d ",label_row[i]);
     }
     //printf("\n");
     fprintf(fp,"(assert(or ");
@@ -196,7 +196,7 @@ int main(int argc, char *argv[]) {
     for (int j = 0; j < col; j++)
     {
       temp_col[j] = a[i][j];
-      printf("%d ",label_col[i]);
+      //printf("%d ",label_col[i]);
     }
     //printf("\n");
     fprintf(fp,"(assert(or ");
