@@ -44,7 +44,7 @@ void printSubset(int subSet[], int size, int subAdd[], int index, int check) {
   }
 }
 
-void subsetSum(int set[], int subSet[], int n, int subSize, int total, int count ,int sum, int subAdd[], int index, int check) {
+void subsetcase(int set[], int subSet[], int n, int subSize, int total, int count ,int sum, int subAdd[], int index, int check) {
     if(total == sum) { // correct case
        printSubset(subSet, subSize, subAdd, index, check);     // print the subset
        return;
@@ -55,33 +55,34 @@ void subsetSum(int set[], int subSet[], int n, int subSize, int total, int count
       for(int i = count; i < n; i++ ) {
         subSet[subSize] = set[i];
         subAdd[subSize] = i;
-        subsetSum(set, subSet, n, subSize+1, total+set[i], i+1, sum, subAdd, index, check);     // search next subset
+        subsetcase(set, subSet, n, subSize+1, total+set[i], i+1, sum, subAdd, index, check);     // search next subset
        }
     }
 }
 
-void findSubset(int set[], int size, int sum, int index, int check) {
-    int *subSet = (int*)malloc(size * sizeof(int));     //create subset array to pass parameter of subsetSum
-    int *subAdd = (int*)malloc(size * sizeof(int));     //create subaddress array to pass parameter of subsetSum
-    subsetSum(set, subSet, size, 0, 0, 0, sum, subAdd, index, check);
+void searchSubset(int set[], int size, int sum, int index, int check) {
+    int *subSet = (int*)malloc(size * sizeof(int));     //create subset array to pass parameter of subsetcase
+    int *subAdd = (int*)malloc(size * sizeof(int));     //create subaddress array to pass parameter of subsetcase
+    subsetcase(set, subSet, size, 0, 0, 0, sum, subAdd, index, check);
     free(subSet);
+    free(subAdd);
 }
 
 int main(int argc, char *argv[]) {
   char str[1024], *token;
   int row = 0, col = 0;
   int **a = NULL;
-  char buffer[1024];
   int *temp_row = NULL;
   int *temp_col = NULL;
-  int count = 0; // 삭제가능
-  int label_num = 0;
   int *label_row = NULL;
   int *label_col = NULL;
+  int count = 0;
+  int label_num = 0;
 
   fp = fopen("formula","w");
 
   FILE * fpc = NULL;
+
   if(argc>1)
     fpc = fopen(argv[1],"r");
   else
@@ -94,6 +95,7 @@ int main(int argc, char *argv[]) {
   while(fgets(str,1024,fpc) != NULL)
   {
     count++;
+
     if(count == 1)
     {
       str[strlen(str)-1] = 0; // delete ‘\n’
@@ -104,6 +106,7 @@ int main(int argc, char *argv[]) {
         token = strtok(NULL, " ");
       }
     }
+
     else
     {
       str[strlen(str)-1] = 0; // delete ‘\n’
@@ -185,7 +188,7 @@ int main(int argc, char *argv[]) {
     }
     //printf("\n");
     fprintf(fp,"(assert(or ");
-    findSubset(temp_row, row, label_row[i], i+1, 1);
+    searchSubset(temp_row, row, label_row[i], i+1, 1);
     fprintf(fp,"))\n");
   }
   free(temp_row);
@@ -200,7 +203,7 @@ int main(int argc, char *argv[]) {
     }
     //printf("\n");
     fprintf(fp,"(assert(or ");
-    findSubset(temp_col, col, label_col[i], i+1, 0);
+    searchSubset(temp_col, col, label_col[i], i+1, 0);
     fprintf(fp,"))\n");
   }
   free(temp_col);
