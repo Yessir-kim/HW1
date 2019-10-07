@@ -2,6 +2,7 @@
 >* Q: How to build and run the programs?
 >
 > - A: Follow this step
+
 >  Step 1. Type "make clean" and then type "make" to build a program. 
 >  Step 2. The programs names are united as "puzzle". So type like "./puzzle <Input_file_name>". 
 >  Then, the program will show the solution for <Input_file_name>.
