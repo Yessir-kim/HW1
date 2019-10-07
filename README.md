@@ -3,9 +3,9 @@
 
 - A: Follow this step
 
-  1. Type "make clean" and then type "make" to build a program. 
-  2. The programs names are united as "puzzle". So type like "./puzzle <Input_file_name>". 
-  3. Then, the program will show the solution for <Input_file_name>.
+1. Type "make clean" and then type "make" to build a program. 
+2. The programs names are united as "puzzle". So type like "./puzzle <Input_file_name>". 
+3. Then, the program will show the solution for <Input_file_name>.
 
 - Example: As an example, I want to get a solution for "test" that is Inputfile name.
 
