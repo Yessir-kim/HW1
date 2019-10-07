@@ -4,7 +4,6 @@
 
 
 FILE * fp;
-int check;
 
 void printSubset(int subSet[], int size, int subAdd[], int index, int check) {
   if(check == 1)
@@ -73,17 +72,12 @@ int main(int argc, char *argv[]) {
   int row = 0, col = 0;
   int **a = NULL;
   char buffer[1024];
-  char c;
-  int k = 0, l = 0;
   int *temp_row = NULL;
   int *temp_col = NULL;
-  int count = 0;
-  int col_count = 0;
+  int count = 0; // 삭제가능
   int label_num = 0;
   int *label_row = NULL;
   int *label_col = NULL;
-  int check_num = 0;
-  int already = 0;
 
   fp = fopen("formula","w");
 
@@ -131,7 +125,7 @@ int main(int argc, char *argv[]) {
   //printf("%d %d\n",row,col);
   fclose(fpc);
 
-  count = 0;
+  //count = 0;
   label_row = (int*)malloc(col * sizeof (int));
   label_col = (int*)malloc(row * sizeof (int));
 
@@ -157,60 +151,20 @@ int main(int argc, char *argv[]) {
       else
         fscanf(fpd,"%d",&a[i][j]);
     }
-/*  while(1)
-  {
-    c = fgetc(fpd);
-    if(feof(fpd)) break;
-  //  printf("%c\n",c);
-    if(count < col)
-    {
-      if(c == ' ') {check_num++; count++; continue;}
-      else if(c == '\n') {count++; continue;}
-      else
-      {
-        if(c != '\0')
-        {
-          label_row[check_num]*=10;
-          label_row[check_num]+=atoi(&c);
-          //printf("%d\n",label_row[l]);
-        }
-      }
-    }
-    else
-    {
-      if(c == ' ') {l++; col_count++; continue;}
-      else if(c == '\n') {k++; l = 0; already++; col_count = 0; continue;}
-      else
-      {
-        if(c != '\0')
-        {
-          if(col_count >= col)
-          {
-            label_col[already]*=10;
-            label_col[already]+=atoi(&c);
-          }
-          else
-          {
-            a[k][l]*=10;
-            a[k][l]+=atoi(&c);
-          //  printf("%d\n",a[k][l]);
-          }
-        }
-      }
-    }
-  }*/
-//  for(int i = 0; i < label_num; i++)
-//    printf("%d\n",label_row[i]);
-//  for(int i = 0; i < row; i++)
-//    printf("%d\n",label_col[i]);
   fclose(fpd);
-  //행렬 테스트
+/*
+  Matrix and label value check
+*/
+/*
+  for(int i = 0; i < col; i++)
+    printf("%d\n",label_row[i]);
+  for(int i = 0; i < row; i++)
+    printf("%d\n",label_col[i]);
   for(int i = 0; i < 9; i++){
   	for(int j = 0; j < 9; j++)
   		printf("%d ",a[i][j]);
-    printf("\n");
-  }
-
+    printf("\n");}
+*/
   temp_row = (int*)malloc(row * sizeof (int));
   temp_col = (int*)malloc(col * sizeof (int));
   // assert statement declare
@@ -236,7 +190,7 @@ int main(int argc, char *argv[]) {
   }
   free(temp_row);
   free(label_row);
-  // row case
+  // row case check
   for (int i = 0; i < col; i++)
   {
     for (int j = 0; j < col; j++)
