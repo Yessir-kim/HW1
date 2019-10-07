@@ -1,4 +1,4 @@
-# Discrete Mathematics
+# Homework 1
 * Q: How to build and run the programs?
 
 - A: Follow this step
