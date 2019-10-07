@@ -211,7 +211,7 @@ int main(int argc, char *argv[])
   char q[128] ;
   char o,p;
 
-  scanf("%s %s", q, b) ;
+  fscanf(fin,"%s %s", q, b) ;
 
   if(strcmp(q,"unsat") == 0)
   {
@@ -220,7 +220,7 @@ int main(int argc, char *argv[])
   }
 	for (z = 0 ; z < row*col ; z++)
   {
-		scanf("%s %s %s %s %s", b, s, b, b, n);
+		fscanf(fin,"%s %s %s %s %s", b, s, b, b, n);
 		sscanf(s,"%c%d%c%d",&o,&i,&p,&j);
 
 		if (strcmp(n, "0)") != 0)
