@@ -161,8 +161,8 @@ int main(int argc, char *argv[])
   		printf("%d ",a[i][j]);
     printf("\n");}
 */
-  temp_row = (int*)malloc(row * sizeof (int));
-  temp_col = (int*)malloc(col * sizeof (int));
+  temp_row = (int*)malloc(col * sizeof (int));
+  temp_col = (int*)malloc(row * sizeof (int));
   // assert statement declare
   for (int i = 1 ; i <= row ; i++)
       for (int j = 1 ; j <= col ; j++)
