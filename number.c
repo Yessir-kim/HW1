@@ -140,7 +140,7 @@ int main(int argc, char *argv[])
     fscanf(fpd,"%d",&label_row[i]);
 
   for(int i = 0; i < row; i++)
-    for(int j = 0; j < col + 1; j++)
+    for(int j = 0; j < col; j++)
     {
       if(j == (col - 2))
         fscanf(fpd,"%d",&label_col[i]);
