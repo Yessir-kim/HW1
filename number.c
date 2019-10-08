@@ -142,12 +142,12 @@ int main(int argc, char *argv[])
   for(int i = 0; i < row; i++)
     for(int j = 0; j < col + 1; j++)
     {
-      if(j == col - 2)
+      if(j == (col - 2))
         fscanf(fpd,"%d",&label_col[i]);
       else
         fscanf(fpd,"%d",&a[i][j]);
     }
-  fclose(fpd);*/
+  fclose(fpd);
 /*
   Matrix and label value check
 */
