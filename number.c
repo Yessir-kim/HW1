@@ -6,8 +6,6 @@ FILE * fp;
 
 void printSubset(int subSet[], int size, int subAdd[], int index, int check)
 {
-  if(size == 0)
-    return;
   if(check == 1)
   {
     if(size == 1)
@@ -139,9 +137,9 @@ int main(int argc, char *argv[])
     fscanf(fpd,"%d",&label_row[i]);
 
   for(int i = 0; i < row; i++)
-    for(int j = 0; j < col; j++)
+    for(int j = 0; j < col + 1; j++)
     {
-      if(j == (col - 1))
+      if(j == col)
         fscanf(fpd,"%d",&label_col[i]);
       else
         fscanf(fpd,"%d",&a[i][j]);
