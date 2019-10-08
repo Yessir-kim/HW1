@@ -133,12 +133,12 @@ int main(int argc, char *argv[])
   a = (int**)malloc(row * sizeof (*a));
   for (int j = 0; j < row; j++)
 	 a[j] = (int*)malloc(col * sizeof(**a));
-/*
+
   FILE * fpd = fopen(argv[1],"r");
 
   for(int i = 0; i < col; i++)
     fscanf(fpd,"%d",&label_row[i]);
-
+/*
   for(int i = 0; i < row; i++)
     for(int j = 0; j < col + 1; j++)
     {
