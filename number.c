@@ -142,7 +142,7 @@ int main(int argc, char *argv[])
   for(int i = 0; i < row; i++)
     for(int j = 0; j < col; j++)
     {
-      if(j == (col - 2))
+      if(j == (col - 1))
         fscanf(fpd,"%d",&label_col[i]);
       else
         fscanf(fpd,"%d",&a[i][j]);
@@ -161,7 +161,7 @@ int main(int argc, char *argv[])
   		printf("%d ",a[i][j]);
     printf("\n");}
 */
-  temp_row = (int*)malloc(row * sizeof (int));
+ /* temp_row = (int*)malloc(row * sizeof (int));
   temp_col = (int*)malloc(col * sizeof (int));
   // assert statement declare
   for (int i = 1 ; i <= row ; i++)
@@ -240,5 +240,5 @@ int main(int argc, char *argv[])
     exit(-1);
   }
 
-  pclose(fin);
+  pclose(fin);*/
 }
