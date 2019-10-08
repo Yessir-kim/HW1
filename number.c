@@ -124,7 +124,6 @@ int main(int argc, char *argv[])
   }
   col += 1;
   col = (col - row) / row;
-  printf("%d %d",row,col);
   fclose(fpc);
 
   label_row = (int*)malloc(col * sizeof (int));
@@ -161,7 +160,7 @@ int main(int argc, char *argv[])
   		printf("%d ",a[i][j]);
     printf("\n");}
 */
- /* temp_row = (int*)malloc(row * sizeof (int));
+  temp_row = (int*)malloc(row * sizeof (int));
   temp_col = (int*)malloc(col * sizeof (int));
   // assert statement declare
   for (int i = 1 ; i <= row ; i++)
@@ -240,5 +239,5 @@ int main(int argc, char *argv[])
     exit(-1);
   }
 
-  pclose(fin);*/
+  pclose(fin);
 }
