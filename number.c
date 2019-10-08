@@ -6,6 +6,8 @@ FILE * fp;
 
 void printSubset(int subSet[], int size, int subAdd[], int index, int check)
 {
+  if(size == 0)
+    return;
   if(check == 1)
   {
     if(size == 1)
