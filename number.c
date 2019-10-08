@@ -177,7 +177,7 @@ int main(int argc, char *argv[])
       temp_row[j] = a[j][i];
 
     fprintf(fp,"(assert(or ");
-    searchSubset(temp_row, row, label_row[i], i+1, 1);
+    searchSubset(temp_row, col, label_row[i], i+1, 1);
     fprintf(fp,"))\n");
   }
   free(temp_row);
@@ -189,7 +189,7 @@ int main(int argc, char *argv[])
       temp_col[j] = a[i][j];
 
     fprintf(fp,"(assert(or ");
-    searchSubset(temp_col, col, label_col[i], i+1, 0);
+    searchSubset(temp_col, row, label_col[i], i+1, 0);
     fprintf(fp,"))\n");
   }
   free(temp_col);
