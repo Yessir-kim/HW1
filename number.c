@@ -3,7 +3,7 @@
 #include <string.h>
 
 FILE * fp;
-
+/*
 void printSubset(int subSet[], int size, int subAdd[], int index, int check)
 {
   if(size == 0)
@@ -71,7 +71,7 @@ void searchSubset(int set[], int size, int sum, int index, int check)
     free(subSet);
     free(subAdd);
 }
-
+*/
 int main(int argc, char *argv[])
 {
   char str[1024], *token;
