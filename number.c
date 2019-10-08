@@ -171,9 +171,9 @@ int main(int argc, char *argv[])
       for(int j = 1; j <= col; j++)
   		  fprintf(fp,"(assert(and (<= B%d_%d 1) (<= 0 B%d_%d)))\n", i, j, i, j);
   // col case check
-  for (int i = 0; i < row; i++)
+  for (int i = 0; i < col; i++)
   {
-    for (int j = 0; j < row; j++)
+    for (int j = 0; j < col; j++)
       temp_row[j] = a[j][i];
 
     fprintf(fp,"(assert(or ");
@@ -183,9 +183,9 @@ int main(int argc, char *argv[])
   free(temp_row);
   free(label_row);
   // row case check
-  for (int i = 0; i < col; i++)
+  for (int i = 0; i < row; i++)
   {
-    for (int j = 0; j < col; j++)
+    for (int j = 0; j < row; j++)
       temp_col[j] = a[i][j];
 
     fprintf(fp,"(assert(or ");
