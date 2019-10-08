@@ -93,7 +93,6 @@ int main(int argc, char *argv[])
     exit(-1);
   }
 
-
   while(fgets(str,1024,fpc) != NULL)
   {
     count++;
@@ -218,21 +217,23 @@ int main(int argc, char *argv[])
     printf("No solution!\n");
     exit(-1);
   }
-	for (z = 0 ; z < row*col ; z++)
+	
+  for (z = 0 ; z < row*col ; z++)
   {
-		fscanf(fin,"%s %s %s %s %s", b, s, b, b, n);
-		sscanf(s,"%c%d%c%d",&o,&i,&p,&j);
+    fscanf(fin,"%s %s %s %s %s", b, s, b, b, n);
+    sscanf(s,"%c%d%c%d",&o,&i,&p,&j);
 
-		if (strcmp(n, "0)") != 0)
-			board[i][j] = 1 ;
-  	else
+    if (strcmp(n, "0)") != 0)
+      board[i][j] = 1 ;
+    else
       board[i][j] = 0;
-	}
+  }
 
-	for (i = 1 ; i <= row ; i++) {
-		for (j = 1 ; j <= col ; j++)
-			printf("%d ", board[i][j]) ;
-		printf("\n") ;
-	}
+  for (i = 1 ; i <= row ; i++) 
+  {
+    for (j = 1 ; j <= col ; j++)
+      printf("%d ", board[i][j]) ;
+    printf("\n") ;
+   }
   pclose(fin);
 }
