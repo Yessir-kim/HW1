@@ -212,7 +212,7 @@ int main(int argc, char *argv[])
 
   fscanf(fin,"%s %s", q, b) ;
 
-  if(strcmp(q,"sat") != 0)
+  if(strcmp(q,"sat") == 0)
   {
     for (z = 0 ; z < row*col ; z++)
     {
