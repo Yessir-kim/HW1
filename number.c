@@ -124,7 +124,7 @@ int main(int argc, char *argv[])
   }
   col += 1;
   col = (col - row) / row;
-/*
+
   fclose(fpc);
 
   label_row = (int*)malloc(col * sizeof (int));
@@ -147,7 +147,7 @@ int main(int argc, char *argv[])
       else
         fscanf(fpd,"%d",&a[i][j]);
     }
-  fclose(fpd);*/
+  fclose(fpd);
 /*
   Matrix and label value check
 */
