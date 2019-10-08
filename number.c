@@ -151,7 +151,7 @@ int main(int argc, char *argv[])
 /*
   Matrix and label value check
 */
-/*
+
   for(int i = 0; i < col; i++)
     printf("%d\n",label_row[i]);
   for(int i = 0; i < row; i++)
@@ -160,8 +160,8 @@ int main(int argc, char *argv[])
   	for(int j = 0; j < 9; j++)
   		printf("%d ",a[i][j]);
     printf("\n");}
-*/
-  temp_row = (int*)malloc(row * sizeof (int));
+
+/*  temp_row = (int*)malloc(row * sizeof (int));
   temp_col = (int*)malloc(col * sizeof (int));
   // assert statement declare
   for (int i = 1 ; i <= row ; i++)
@@ -240,5 +240,5 @@ int main(int argc, char *argv[])
     exit(-1);
   }
 
-  pclose(fin);
+  pclose(fin);*/
 }
