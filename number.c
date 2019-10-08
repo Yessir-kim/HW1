@@ -133,7 +133,7 @@ int main(int argc, char *argv[])
   a = (int**)malloc(row * sizeof (*a));
   for (int j = 0; j < row; j++)
 	 a[j] = (int*)malloc(col * sizeof(**a));
-
+/*
   FILE * fpd = fopen(argv[1],"r");
 
   for(int i = 0; i < col; i++)
@@ -147,7 +147,7 @@ int main(int argc, char *argv[])
       else
         fscanf(fpd,"%d",&a[i][j]);
     }
-  fclose(fpd);
+  fclose(fpd);*/
 /*
   Matrix and label value check
 */
