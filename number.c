@@ -212,28 +212,31 @@ int main(int argc, char *argv[])
 
   fscanf(fin,"%s %s", q, b) ;
 
-  if(strcmp(q,"unsat") == 0)
+  if(strcmp(q,"sat") != 0)
+  {
+    for (z = 0 ; z < row*col ; z++)
+    {
+      fscanf(fin,"%s %s %s %s %s", b, s, b, b, n);
+      sscanf(s,"%c%d%c%d",&o,&i,&p,&j);
+
+      if (strcmp(n, "0)") != 0)
+        board[i][j] = 1 ;
+      else
+        board[i][j] = 0;
+    }
+
+    for (i = 1 ; i <= row ; i++)
+    {
+      for (j = 1 ; j <= col ; j++)
+        printf("%d ", board[i][j]) ;
+      printf("\n") ;
+     }
+  }
+  else
   {
     printf("No solution!\n");
     exit(-1);
   }
-	
-  for (z = 0 ; z < row*col ; z++)
-  {
-    fscanf(fin,"%s %s %s %s %s", b, s, b, b, n);
-    sscanf(s,"%c%d%c%d",&o,&i,&p,&j);
 
-    if (strcmp(n, "0)") != 0)
-      board[i][j] = 1 ;
-    else
-      board[i][j] = 0;
-  }
-
-  for (i = 1 ; i <= row ; i++) 
-  {
-    for (j = 1 ; j <= col ; j++)
-      printf("%d ", board[i][j]) ;
-    printf("\n") ;
-   }
   pclose(fin);
 }
