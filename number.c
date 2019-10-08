@@ -124,7 +124,7 @@ int main(int argc, char *argv[])
   }
   col += 1;
   col = (col - row) / row;
-
+  printf("%d %d",row,col);
   fclose(fpc);
 
   label_row = (int*)malloc(col * sizeof (int));
